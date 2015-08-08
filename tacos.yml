@@ -2,7 +2,11 @@
 - hosts: tacoserver
   sudo: yes
 
+  roles:
+    - nodejs
+
   tasks:
-   - name: "Instalar node.js"
-     apt: name=nodejs state=present
-     
+   - name: "Iniciar la aplicacion"
+     command: forever start /opt/software/tacoapp/tacos.js
+   - name: "Imprime si es produccion"
+     debug: msg= {{ ambiente }} 
