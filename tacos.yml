@@ -9,4 +9,4 @@
    - name: "Iniciar la aplicacion"
      command: forever start /opt/software/tacoapp/tacos.js
    - name: "Imprime si es produccion"
-     debug: msg= {{ ambiente }} 
+     debug: var=ambiente 
